@@ -1,0 +1,395 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --hue: 190;
+  --primary-blue: #2282f2;
+  --primary-orange: #f26a22;
+  --primary-white: #fff;
+  --nav-height: 7.2rem;
+  font-size: 62.5%;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: 'Montserrat';
+  font-size: 1.6rem;
+  color: var(--primary-white);
+  overflow: overlay;
+  overflow-x: hidden;
+  background-color: #0f0f0f;
+}
+header#mobile {
+  display: none;
+}
+.wrapper {
+  width: min(190rem, 95%);
+  display: grid;
+}
+.col-a {
+  grid-area: A;
+}
+.col-b {
+  grid-area: B;
+}
+.social-media-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2rem #adadad;
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-orange);
+  border-radius: 1rem;
+}
+nav#navigation .menu ul li:hover {
+  cursor: pointer;
+}
+.menu ul li::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.35rem;
+  border-radius: 5rem;
+  background-color: var(--primary-orange);
+  bottom: -0.3rem;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.menu ul li:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+#navigation {
+  margin-top: 13rem;
+  margin-inline: 15rem;
+  display: flex;
+}
+#navigation .wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#navigation .wrapper .logo-div {
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.logo-div h2 {
+  font-size: 9rem;
+  font-weight: 500;
+}
+.menu ul {
+  width: 30rem;
+  display: flex;
+  justify-content: space-around;
+}
+.menu ul li {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+#home {
+  padding-top: calc(8.1rem + var(--nav-height));
+  height: 170rem;
+}
+#home::before {
+  background-image: url(../assets/background-image-effect.png);
+  content: '';
+  width: 100%;
+  height: calc(77% + var(--nav-height));
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home header h1 {
+  font-size: 8.5rem;
+  font-weight: 800;
+  font-style: normal;
+}
+#home header span:nth-child(1) {
+  color: var(--primary-orange);
+}
+#home header span:nth-child(4) {
+  color: var(--primary-blue);
+}
+#home p {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 3.2rem;
+}
+#home .col-a img {
+  width: 45rem;
+  margin-left: 4rem;
+}
+#home .wrapper {
+  width: 85%;
+  margin: 0 auto;
+  grid-template-columns: 80rem 1fr;
+  grid-template-areas: 'A B';
+}
+#home .col-b {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+  align-self: center;
+  text-align: right;
+}
+#home .square:nth-child(2) {
+  width: 33rem;
+  height: 23rem;
+  position: absolute;
+  right: 4rem;
+}
+#services div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#services .wrapper {
+  height: 65rem;
+  width: 85%;
+  margin: 5rem auto;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+#services div p {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+#services div span {
+  font-weight: 700;
+  color: var(--primary-orange);
+}
+#services header h1 {
+  font-size: 8rem;
+  font-weight: 800;
+}
+#services #services_01 .wrapper {
+  grid-template-columns: 75rem 1fr;
+  grid-template-areas: 'A B';
+  margin-inline: auto;
+  gap: 13rem;
+}
+#services #services_01 .wrapper .col-b {
+  align-self: center;
+}
+#services #services_02 .wrapper {
+  grid-template-columns: 75rem 1fr;
+  grid-template-areas: 'B A';
+  gap: 13rem;
+}
+#services#services_02 .wrapper .col-b {
+  align-self: center;
+}
+#services #services_03 .wrapper {
+  grid-template-columns: 75rem 1fr;
+  margin: 0 auto;
+  grid-template-areas: 'A B';
+  gap: 13rem;
+}
+#services #services_03 .wrapper .col-b {
+  align-self: center;
+}
+#services #services_04 .wrapper {
+  grid-template-columns: 75rem 1fr;
+  grid-template-areas: 'B A';
+  gap: 13rem;
+}
+#services #services_04 .wrapper .col-b {
+  align-self: center;
+}
+#services #about_image {
+  width: 100vw;
+}
+#contact {
+  height: 150rem;
+  margin: 0 auto;
+}
+
+#contact .wrapper {
+  height: 125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 6rem auto;
+}
+#contact .wrapper header h2 {
+  font-size: 6rem;
+}
+#contact .wrapper .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(173, 173, 173, 0.3);
+  width: 80rem;
+  height: 80rem;
+  border-radius: 2.2rem;
+  gap: 5rem;
+}
+#contact .wrapper .form h2 {
+  align-self: flex-start;
+  padding-top: 2rem;
+  padding-left: 8rem;
+  font-size: 5rem;
+  font-weight: 800;
+}
+#contact .wrapper .form .form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+#contact .wrapper .form textarea,
+#contact .wrapper .form fieldset {
+  width: 70rem;
+  border: none;
+  border-radius: 2.2rem;
+}
+#contact .wrapper .form textarea {
+  font-size: 2.5rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
+
+#contact .wrapper .form textarea::placeholder {
+  color: #0f0f0f;
+}
+
+#contact .wrapper .form fieldset input {
+  width: 70rem;
+  height: 4.5rem;
+  border-radius: 10rem;
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  padding-left: 2rem;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* Simulando input (INICIO) */
+
+.form-control.success input {
+  border: 0.2rem solid #4eca64;
+}
+
+.form-control.error input {
+  border: 0.2rem solid #db5a5a;
+}
+
+.form-control.success i .img-success {
+  visibility: visible;
+}
+
+.form-control.error i .img-error {
+  visibility: visible;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+/* Simulando input (FIM) */
+
+.form-control i {
+  position: absolute;
+  right: 6rem;
+  padding-top: 1.2rem;
+  width: 2.5rem;
+  visibility: hidden;
+}
+
+.form-control small {
+  display: block;
+  position: absolute;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #db5a5a;
+  visibility: hidden;
+}
+
+#contact .wrapper .form fieldset input::placeholder {
+  color: #fff;
+}
+#contact .wrapper .form button {
+  width: 20rem;
+  height: 6.6rem;
+  background-color: var(--primary-orange);
+  border-radius: 10rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  align-self: flex-end;
+  border: none;
+}
+#contact .wrapper .form button:hover {
+  cursor: pointer;
+  opacity: 50%;
+  transition: all 0.2s;
+}
+#footer {
+  width: 100vw;
+  display: flex;
+  padding-inline: 12rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 21.5rem;
+  background-color: #252525;
+}
+#footer .left_side {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 12rem;
+}
+#footer .left_side .reserved_rights {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+#footer .left_side .reserved_rights span {
+  font-weight: 700;
+}
+#footer .right_side div {
+  display: flex;
+  width: 15rem;
+  justify-content: space-around;
+  gap: 3rem;
+}
+#footer .right_side div a img {
+  width: 3rem;
+}
