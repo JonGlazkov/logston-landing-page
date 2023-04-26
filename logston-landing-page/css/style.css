@@ -122,8 +122,10 @@ nav#navigation .menu ul li:hover {
 }
 #home::before {
   background-image: url(../assets/background-image-effect.png);
+  background-position: left;
+  background-size: cover;
   content: '';
-  width: 100%;
+  width: 150%;
   height: calc(77% + var(--nav-height));
   display: block;
   position: absolute;
